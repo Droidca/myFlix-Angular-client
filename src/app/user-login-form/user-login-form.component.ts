@@ -9,6 +9,7 @@ import { UserRegistrationService } from '../fetch-api-data.service';
 // This import is used to display notifications back to the user
 import { MatSnackBar } from '@angular/material/snack-bar';
 
+// This imports the routing of different views
 import { Router } from '@angular/router';
 
 
@@ -40,6 +41,7 @@ export class UserLoginFormComponent implements OnInit {
       this.snackBar.open('Login Successfull!', 'OK', {
         duration: 2000
       });
+      this.router.navigate(['movies']);
     }, (result) => {
       this.snackBar.open(result, 'OK', {
         duration: 2000
