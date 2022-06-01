@@ -1,12 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError, catchError } from 'rxjs';
-import { map } from 'rxjs/operators';
 
 //Declaring the api url that will provide data for the client app
 const apiUrl = 'https://popcorns-and-coke.herokuapp.com/';
 //Get Usenrame
-const username = localStorage.getItem('username');
+const username = localStorage.getItem('user');
 
 
 @Injectable({
@@ -65,7 +64,7 @@ export class UserRegistrationService {
 
   getMovieDirector(): Observable<any> {
     const token = localStorage.getItem('token');
-    return this.http.get(apiUrl + 'movies/Director/:Name', {
+    return this.http.get(apiUrl + 'movies/director/:Name', {
       headers: new HttpHeaders({
         Authorization: 'Bearer ' + token,
       }),
@@ -99,9 +98,9 @@ export class UserRegistrationService {
 
   // add a movie to favorite movies list
 
-  addFavoriteMovie(id: string): Observable<any> {
+  addFavoriteMovie(MovieID: string): Observable<any> {
     const token = localStorage.getItem('token');
-    return this.http.post(apiUrl + `users/${username}/movies/${id}`, {
+    return this.http.post(apiUrl + `users/${username}/movies/${MovieID}`, null, {
       headers: new HttpHeaders({
         Authorization: 'Bearer ' + token,
       }),
