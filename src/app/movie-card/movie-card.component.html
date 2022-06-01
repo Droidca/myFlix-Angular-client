@@ -2,13 +2,12 @@
 <div class="background">
   <div style="display: flex; position: absolute;
   top: 10%;
-  height: 75%;
+  height: 85%;
   width: 100%;
   overflow-x: scroll;">
     <mat-card style="background-color: transparent; color: white;" *ngFor="let movie of movies;">
       <mat-card-header style="height:15%; text-align: center;">
-        <mat-card-title>{{movie.Title}}</mat-card-title>
-        <mat-card-subtitle style="color: white;">Directed by: {{movie.Director.Name}}</mat-card-subtitle>
+        <mat-card-title style="font-size: 2vh;">{{movie.Title}}</mat-card-title>
       </mat-card-header>
       <mat-card-content>
         <img id="cover_img" src={{movie.ImagePath}} alt={{movie.Title}} />

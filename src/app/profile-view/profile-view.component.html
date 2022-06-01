@@ -1,10 +1,7 @@
 <app-navbar style="color: white;"></app-navbar>
-<div class="background">
-  <div style="position: absolute;
-  top: 5%;
-  height: 70%;
-  width: 100%;">
-    <mat-card style="background-color: grey;">
+<div style="background-color: grey;">
+  <div>
+    <mat-card style="background-color: grey; padding-top: 2%;">
       <mat-card-header style="color:white;">
         <mat-card-title>Profile Information</mat-card-title>
       </mat-card-header>
@@ -28,17 +25,10 @@
   </div>
 
 
-  <div style="position: absolute;
-  top: 26%;
-  height: 70%;
-  width: 100%;">
+  <div>
     <h2 style="text-align: center; color: white;">Favorite Movies</h2>
   </div>
-  <div style="display: flex; position: absolute;
-  top: 30%;
-  height: 70%;
-  width: 100%;
-  overflow-x: scroll;">
+  <div>
     <mat-card style="background-color: transparent; color: white;" *ngFor="let movie of favoriteMovies;">
       <mat-card-header style="height:15%; text-align: center;">
         <mat-card-title style="text-align: center;">{{movie.Title}}</mat-card-title>
