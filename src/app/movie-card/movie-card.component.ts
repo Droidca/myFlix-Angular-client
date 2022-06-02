@@ -19,6 +19,11 @@ export class MovieCardComponent {
     this.getMovies();
   }
 
+  /**
+ * gets a list of all movies from the Api endpoint
+ * @function getAllMovies
+ */
+
   getMovies(): void {
     this.fetchApiData.getAllMovies().subscribe((resp: any) => {
       this.movies = resp;
@@ -26,6 +31,14 @@ export class MovieCardComponent {
       return this.movies;
     });
   }
+
+  /**
+ * opens the dialog box with information about the movies director
+ * @param name {string}
+ * @param bio {string}
+ * @param birth {string}
+ * @param death {string}
+ */
 
   openDirectorDialog(name: string, bio: string, birth: string, death: string,): void {
     this.dialog.open(DirectorCardComponent, {
@@ -40,6 +53,12 @@ export class MovieCardComponent {
     console.log(name)
   }
 
+  /**
+* opens the dialog box with information about the movies genre
+* @param name {string}
+* @param description {string}
+*/
+
   openGenreDialog(name: string, description: string,): void {
     this.dialog.open(GenreCardComponent, {
       data: {
@@ -51,6 +70,11 @@ export class MovieCardComponent {
     console.log(name)
   }
 
+  /**
+* opens the dialog box with information about the movies description
+* @param description {string}
+*/
+
   openSynopsisDialog(description: string,): void {
     this.dialog.open(SynopsisCardComponent, {
       data: {
@@ -60,6 +84,14 @@ export class MovieCardComponent {
     });
     console.log(description)
   }
+
+  /**
+ * Add a movie to user's favorites
+ * @function addFavoriteMovie
+ * @param id {string}
+ * @param Title {string}
+ * @returns an array of the movie object in json format
+ */
 
   addFavorite(id: string, Title: string): void {
     console.log(id);

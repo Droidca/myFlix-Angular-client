@@ -31,7 +31,11 @@ export class UserEditComponent implements OnInit {
     this.getUserProfile();
   }
 
-  // gets the users data
+  /**
+   * gets the users data
+   * @function getUserInformation
+   * @returns the data of currently logged user is available
+   */
 
   getUserProfile(): void {
     const user = localStorage.getItem('user');
@@ -41,7 +45,13 @@ export class UserEditComponent implements OnInit {
     });
   }
 
-  // updates the users data
+  /**
+   * updates the user's data in database
+   * displays a message for successfully updated profile
+   * reloads the page
+   * @function editUserInformation
+   * @returns a users updated data
+   */
 
   editUserProfile(): void {
     this.fetchApiData.editUserInformation(this.userData).subscribe((resp) => {

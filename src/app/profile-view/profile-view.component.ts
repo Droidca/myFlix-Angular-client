@@ -30,7 +30,11 @@ export class ProfileViewComponent implements OnInit {
     this.getFavoriteMovies();
   }
 
-  // gets users data
+  /**
+   * calls API end-piont to get the user's data
+   * @function getUserInformation
+   * @returns user's data
+   */
 
   getUserProfile(): void {
     const username = localStorage.getItem('user');
@@ -43,7 +47,10 @@ export class ProfileViewComponent implements OnInit {
     }
   }
 
-  //shows user favorite movies
+  /**
+   * shows users favorite movies
+   * @function getAllMovies
+   */
 
   getFavoriteMovies(): void {
     this.fetchApiData.getAllMovies().subscribe((resp: any) => {
@@ -57,7 +64,9 @@ export class ProfileViewComponent implements OnInit {
     console.log(this.favoriteMovies);
   }
 
-  // allows to edit users data
+  /**
+   * allows to update user's data
+   */
 
   openEditUserProfile(): void {
     this.dialog.open(UserEditComponent, {
@@ -66,7 +75,11 @@ export class ProfileViewComponent implements OnInit {
     });
   }
 
-  //allows to delete the user 
+  /**
+   * calls API end-point to remove the user from database
+   * @function deleteUserProfile
+   * @returns info that the user has been removed
+   */
 
   deleteUserProfile(): void {
     if (confirm('Are your sure you want to delete your account? This can\'t be undone.')) {
@@ -83,7 +96,13 @@ export class ProfileViewComponent implements OnInit {
     }
   }
 
-  // allows to delete a favorite movie
+  /**
+   * use API end-point to remove a movie from user's favorites
+   * @function deleteFavoriteMovie
+   * @param MovieID {string}
+   * @param Title {string}
+   * @returns updated user's data
+   */
 
   deleteFavoriteMovies(MovieID: string, Title: string): void {
     this.fetchApiData.deleteFavoriteMovie(MovieID).subscribe((res: any) => {
