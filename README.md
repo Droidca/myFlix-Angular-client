@@ -1,27 +1,47 @@
-# MyFlixAngularClient
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.6.
+# myFlix Angular
 
-## Development server
+This is an app similar to a previous project from my Github, however, instead of building it in react, this UI is done using Angular. The user can register, login and update their information, aswell as see the movies information, such as synopsis, genre and director. The user can also add those movies to it's favorites.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Tools
 
-## Code scaffolding
+- typescript
+- Angular
+- gh-pages
+- Doctype
+- Html
+- CSS
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Get Started
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- Clone the project ```https://github.com/Droidca/myFlix-Angular-client.git```
+- Open your terminal
+- cd to the project diretory
+- $npm run start
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Key Features
+- Allows new users to register, and existing users to login/logout
+- Allows users to view details about movies, genres and directors
+- Users are able to update or delete their profile, aswell as add or remove movies from their list of favorites
 
-## Running end-to-end tests
+## Deployment
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-## Further help
+After cloning and installing all the dependecies, to deploy this project you need:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- Create a repository in your github.
+- Open your CLI.
+- Cd to the project directory
+- Type in CLI: $git remote add origin <repository-link>
+- Install in CLI the following: $ng add angular-cli-ghpages
+- After installation type the following in CLI: $ng deploy --base-href=/<repository-name>/
+- The app is now depoloyed to your newly created repository.
+
+
+
+
+## Demo
+
+### <a href="https://droidca.github.io/myFlix-Angular-client/">LIVE DEMO</a> 
